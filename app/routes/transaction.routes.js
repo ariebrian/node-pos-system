@@ -12,5 +12,5 @@ module.exports = app => {
 
   router.delete("/:id", transaction.delete)
 
-  app.use('/api/transactions', router);
+  app.use('/transactions', router);
 }
