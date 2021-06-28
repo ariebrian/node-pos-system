@@ -16,10 +16,11 @@ app.get("/", (req, res) => {
     res.send("Hello")
 })
 
-// const db = require('./app/models')
+const db = require('./models')
 // db.sequelize.sync();
 
-// require("./app/routes/users.routes")(app);
+require("./routes/users.routes")(app);
+require("./routes/transaction.routes")(app);
    
 app.listen(3000, () => {
  console.log("Server running on port 3000");
