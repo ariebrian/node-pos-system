@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "a06a79b9-41fb-42c8-b554-6b960e4ded70",
+		"name": "pos-credibook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Brian\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjQ5MDY0NzIsImV4cCI6MTYyNDkwOTQ3Mn0.kojHI8wptPkv886_4xu-MfsXT2U7b3xYy0Lms41Jowg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"min_amount\": 9,\r\n    \"max_amount\": 101,\r\n    \"order_by\": \"date\",\r\n    \"order_rule\": \"asc\",\r\n    \"limit\": 2,\r\n    \"offset\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/transactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjQ5MDY3NjIsImV4cCI6MTYyNDkwOTc2Mn0.3JbNi0iDZUjLF3WQEeHzsrdBbEwlSIyNsC87kM2cVWs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 10,\r\n    \"notes\": \"to delete\",\r\n    \"type\": \"outcome\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "{",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "\"name\"",
+							"value": " \"Brian\",",
+							"disabled": true
+						},
+						{
+							"key": "\"email\"",
+							"value": " \"brian@mail.com\"",
+							"disabled": true
+						},
+						{
+							"key": "}",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/transactions/3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjQ5MDY3NjIsImV4cCI6MTYyNDkwOTc2Mn0.3JbNi0iDZUjLF3WQEeHzsrdBbEwlSIyNsC87kM2cVWs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1,\r\n    \"notes\": \"test2\",\r\n    \"type\": \"outcome\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions",
+						"3"
+					],
+					"query": [
+						{
+							"key": "{",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "\"name\"",
+							"value": " \"Brian\",",
+							"disabled": true
+						},
+						{
+							"key": "\"email\"",
+							"value": " \"brian@mail.com\"",
+							"disabled": true
+						},
+						{
+							"key": "}",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/transactions/9",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjQ5MDY3NjIsImV4cCI6MTYyNDkwOTc2Mn0.3JbNi0iDZUjLF3WQEeHzsrdBbEwlSIyNsC87kM2cVWs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jerry\",\r\n    \"email\": \"jerry@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/transactions/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions",
+						"9"
+					],
+					"query": [
+						{
+							"key": "{",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "\"name\"",
+							"value": " \"Brian\",",
+							"disabled": true
+						},
+						{
+							"key": "\"email\"",
+							"value": " \"brian@mail.com\"",
+							"disabled": true
+						},
+						{
+							"key": "}",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
